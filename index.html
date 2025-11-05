@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Service - Professional Solutions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #0693e3;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #0693e3;
+        }
+
+        .cta-phone {
+            background: #0693e3;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .cta-phone:hover {
+            background: #0575c4;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0693e3 0%, #5b4fb8 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #0693e3;
+            padding: 16px 40px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: transform 0.3s, box-shadow 0.3s;
+            font-size: 18px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: #333;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #0693e3 0%, #5b4fb8 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 32px;
+        }
+
+        .feature-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 80px 0;
+        }
+
+        .content-section:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .content-flex {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .content-flex.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .content-text {
+            flex: 1;
+        }
+
+        .content-text h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .content-text p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .content-image {
+            flex: 1;
+            background: linear-gradient(135deg, #0693e3 0%, #5b4fb8 100%);
+            height: 400px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #0693e3 0%, #5b4fb8 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #0693e3;
+            padding: 16px 40px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: transform 0.3s, box-shadow 0.3s;
+            font-size: 18px;
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-col a:hover {
+            color: #0693e3;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #333;
+            color: #999;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .content-flex,
+            .content-flex.reverse {
+                flex-direction: column;
+            }
+
+            .content-text h2 {
+                font-size: 28px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">YourBrand</div>
+                <nav>
+                    <a href="#features">Features</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+                <a href="tel:1-800-123-4567" class="cta-phone">Call Now</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Peace of Mind for Your Future</h1>
+            <p>Professional solutions designed to protect what matters most</p>
+            <a href="#contact" class="btn-primary">Get Started Today</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose Us</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">✓</div>
+                    <h3>Trusted Service</h3>
+                    <p>Over 20 years of experience providing reliable solutions to families nationwide.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">★</div>
+                    <h3>Expert Support</h3>
+                    <p>Dedicated team of professionals ready to assist you every step of the way.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">♥</div>
+                    <h3>Affordable Plans</h3>
+                    <p>Flexible options designed to fit your budget and specific needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Section 1 -->
+    <section class="content-section" id="about">
+        <div class="container">
+            <div class="content-flex">
+                <div class="content-text">
+                    <h2>Simple & Straightforward</h2>
+                    <p>We believe in transparency and clarity. No hidden fees, no complicated paperwork. Just honest, reliable service when you need it most.</p>
+                    <p>Our streamlined process makes it easy to get the coverage you need without the hassle.</p>
+                </div>
+                <div class="content-image">
+                    [Image Placeholder]
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Section 2 -->
+    <section class="content-section">
+        <div class="container">
+            <div class="content-flex reverse">
+                <div class="content-text">
+                    <h2>Personalized Solutions</h2>
+                    <p>Every family is unique, and so are their needs. We work with you to create a customized plan that provides the right level of protection.</p>
+                    <p>Our experienced advisors take the time to understand your situation and recommend the best options.</p>
+                </div>
+                <div class="content-image">
+                    [Image Placeholder]
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p>Speak with a specialist today and find the perfect plan for your needs</p>
+            <a href="tel:1-800-123-4567" class="btn-secondary">Call 1-800-123-4567</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>About Us</h4>
+                    <ul>
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Team</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Individual Plans</a></li>
+                        <li><a href="#">Family Plans</a></li>
+                        <li><a href="#">Senior Plans</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="tel:1-800-123-4567">1-800-123-4567</a></li>
+                        <li><a href="mailto:info@yourbrand.com">info@yourbrand.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 YourBrand. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
